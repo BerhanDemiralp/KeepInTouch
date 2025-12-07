@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/home_page.dart';
-import 'package:untitled/profile_page.dart';
-import 'package:untitled/settings_page.dart';
+import 'package:keepintouch/home_page.dart';
+import 'package:keepintouch/profile_page.dart';
+import 'package:keepintouch/settings_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +13,36 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Keep In Touch',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF4CAF50), // Green for nature
+          primary: const Color(0xFF4CAF50),
+          secondary: const Color(0xFF81C784),
+        ),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF388E3C), // Darker green
+          foregroundColor: Colors.white,
+          elevation: 2,
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          selectedItemColor: Color(0xFF2E7D32), // Darker green for selected item
+          unselectedItemColor: Colors.grey,
+        ),
+        cardTheme: CardThemeData(
+          elevation: 1,
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        chipTheme: ChipThemeData(
+            backgroundColor: const Color(0xFFC8E6C9), // Light green for chips
+            selectedColor: const Color(0xFF4CAF50),
+            labelStyle: const TextStyle(color: Colors.black87),
+            secondaryLabelStyle: const TextStyle(color: Colors.white),
+            padding: const EdgeInsets.all(8.0)),
       ),
       home: const MainScreen(),
     );
@@ -47,13 +73,12 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const List<String> titles = ['Home', 'Profile', 'Settings'];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Bottom Navigation Bar'),
+        title: Text(titles[_selectedIndex]),
       ),
-      body: Center(
-        child: _pages.elementAt(_selectedIndex),
-      ),
+      body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -61,7 +86,7 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.pets), // More appropriate icon
             label: 'Profile',
           ),
           BottomNavigationBarItem(
@@ -70,7 +95,6 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
     );
