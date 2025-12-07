@@ -1,4 +1,4 @@
-package com.example.untitled
+package com.example.keepintouch
 
 import io.flutter.embedding.android.FlutterActivity
 
