@@ -1,5 +1,41 @@
 import 'package:flutter/material.dart';
 
+enum FormType {
+  RoutineCheck,
+  Vaccination,
+  Surgery,
+  Emergency,
+}
+
+// Helper extension for FormType
+extension FormTypeExtension on FormType {
+  String get displayTitle {
+    switch (this) {
+      case FormType.RoutineCheck:
+        return 'Routine Check';
+      case FormType.Vaccination:
+        return 'Vaccination';
+      case FormType.Surgery:
+        return 'Surgery';
+      case FormType.Emergency:
+        return 'Emergency';
+    }
+  }
+
+  IconData get icon {
+    switch (this) {
+      case FormType.RoutineCheck:
+        return Icons.check_circle_outline;
+      case FormType.Vaccination:
+        return Icons.colorize; // Represents a syringe
+      case FormType.Surgery:
+        return Icons.local_hospital;
+      case FormType.Emergency:
+        return Icons.warning_amber_rounded;
+    }
+  }
+}
+
 class Owner {
   final int id;
   final String name;
@@ -39,23 +75,23 @@ class User {
 class FormEntry {
   final String id;
   final int animalId;
+  final FormType type;
   final int? checkedByUserId;
-  final String title;
   final Map<String, String> formData;
-  bool isSent;
   bool isChecked;
   final DateTime createdAt;
-  final DateTime? sentAt;
+  final DateTime? sentAt; // Represents the date it was filled
   final DateTime? checkedAt;
   final DateTime updatedAt;
+
+  bool get isFilled => formData.isNotEmpty;
 
   FormEntry({
     required this.id,
     required this.animalId,
+    required this.type,
     this.checkedByUserId,
-    required this.title,
     required this.formData,
-    this.isSent = false,
     this.isChecked = false,
     required this.createdAt,
     this.sentAt,

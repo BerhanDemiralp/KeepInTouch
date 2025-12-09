@@ -11,21 +11,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _showUnsent = false;
+  bool _showUnfilled = false;
   bool _showUnchecked = false;
 
   @override
   Widget build(BuildContext context) {
     final filteredAnimals = mockAnimals.where((animal) {
-      if (!_showUnsent && !_showUnchecked) {
+      if (!_showUnfilled && !_showUnchecked) {
         return true; // Show all if no filter is active
       }
       bool matches = false;
-      if (_showUnsent) {
-        matches = matches || animal.forms.any((form) => !form.isSent);
+      if (_showUnfilled) {
+        matches = matches || animal.forms.any((form) => !form.isFilled);
       }
       if (_showUnchecked) {
-        matches = matches || animal.forms.any((form) => !form.isChecked);
+        // Only consider filled forms for the unchecked filter
+        matches = matches || animal.forms.any((form) => form.isFilled && !form.isChecked);
       }
       return matches;
     }).toList();
@@ -40,11 +41,13 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FilterChip(
-                  label: const Text('Gönderilmemiş'), // Unsent
-                  selected: _showUnsent,
+                  avatar: Icon(Icons.hourglass_empty_rounded,
+                      color: _showUnfilled ? Colors.white : Colors.black87),
+                  label: const Text('Doldurulmamış'), // Unfilled
+                  selected: _showUnfilled,
                   onSelected: (selected) {
                     setState(() {
-                      _showUnsent = selected;
+                      _showUnfilled = selected;
                       if (selected) {
                         _showUnchecked = false;
                       }
@@ -53,13 +56,15 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 8),
                 FilterChip(
+                  avatar: Icon(Icons.warning_amber_rounded,
+                      color: _showUnchecked ? Colors.white : Colors.orange),
                   label: const Text('Kontrol Edilmemiş'), // Unchecked
                   selected: _showUnchecked,
                   onSelected: (selected) {
                     setState(() {
                       _showUnchecked = selected;
                       if (selected) {
-                        _showUnsent = false;
+                        _showUnfilled = false;
                       }
                     });
                   },
@@ -72,10 +77,11 @@ class _HomePageState extends State<HomePage> {
               itemCount: filteredAnimals.length,
               itemBuilder: (context, index) {
                 final animal = filteredAnimals[index];
-                final hasUncheckedForm =
-                    animal.forms.any((form) => !form.isChecked);
-                final allFormsChecked =
-                    animal.forms.isNotEmpty && !hasUncheckedForm;
+
+                // --- Corrected Status Logic ---
+                final filledForms = animal.forms.where((form) => form.isFilled).toList();
+                final hasUncheckedForm = filledForms.any((form) => !form.isChecked);
+                final allFormsChecked = filledForms.isNotEmpty && !hasUncheckedForm;
 
                 Icon statusIcon;
                 Color statusColor;
@@ -90,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                   statusColor = Colors.orange;
                   statusText = 'Unchecked Forms';
                 } else {
-                  // No forms
+                  // No forms, or only unfilled forms
                   statusIcon = const Icon(Icons.remove_circle_outline,
                       color: Colors.white);
                   statusColor = Colors.grey;

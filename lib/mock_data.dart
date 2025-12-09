@@ -7,113 +7,195 @@ final List<User> mockUsers = [
   User(id: 3, username: 'can', email: 'can@example.com', role: 'user', createdAt: DateTime(2023, 3, 15)),
 ];
 
-// --- OWNERS ---
+// --- OWNERS (20 Manually) ---
 final List<Owner> mockOwners = [
-  Owner(id: 1, name: 'Ali Veli', contact: '555-1234', createdAt: DateTime(2023, 1, 1), updatedAt: DateTime(2023, 1, 1)),
-  Owner(id: 2, name: 'Ayşe Yılmaz', contact: '555-5678', createdAt: DateTime(2023, 1, 2), updatedAt: DateTime(2023, 1, 2)),
-  Owner(id: 3, name: 'Mehmet Kaya', contact: '555-9012', createdAt: DateTime(2023, 1, 3), updatedAt: DateTime(2023, 1, 3)),
-  Owner(id: 4, name: 'Zeynep Demir', contact: '555-1111', createdAt: DateTime(2023, 1, 4), updatedAt: DateTime(2023, 1, 4)),
-  Owner(id: 5, name: 'Can Bonomo', contact: '555-2222', createdAt: DateTime(2023, 1, 5), updatedAt: DateTime(2023, 1, 5)),
-  Owner(id: 6, name: 'Derya Deniz', contact: '555-3333', createdAt: DateTime(2023, 1, 6), updatedAt: DateTime(2023, 1, 6)),
-  Owner(id: 7, name: 'Ahmet Çelik', contact: '555-4444', createdAt: DateTime(2023, 1, 7), updatedAt: DateTime(2023, 1, 7)),
-  Owner(id: 8, name: 'Fatma Şahin', contact: '555-5555', createdAt: DateTime(2023, 1, 8), updatedAt: DateTime(2023, 1, 8)),
-  Owner(id: 9, name: 'Mustafa Arslan', contact: '555-6666', createdAt: DateTime(2023, 1, 9), updatedAt: DateTime(2023, 1, 9)),
-  Owner(id: 10, name: 'Emine Doğan', contact: '555-7777', createdAt: DateTime(2023, 1, 10), updatedAt: DateTime(2023, 1, 10)),
+  Owner(id: 1, name: 'Selin Kara', contact: '555-0001', createdAt: DateTime(2023, 1, 1), updatedAt: DateTime(2023, 1, 1)),
+  Owner(id: 2, name: 'Murat Boz', contact: '555-0002', createdAt: DateTime(2023, 1, 2), updatedAt: DateTime(2023, 1, 2)),
+  Owner(id: 3, name: 'Leyla Tan', contact: '555-0003', createdAt: DateTime(2023, 1, 3), updatedAt: DateTime(2023, 1, 3)),
+  Owner(id: 4, name: 'Emre Aslan', contact: '555-0004', createdAt: DateTime(2023, 1, 4), updatedAt: DateTime(2023, 1, 4)),
+  Owner(id: 5, name: 'Fatma Gül', contact: '555-0005', createdAt: DateTime(2023, 1, 5), updatedAt: DateTime(2023, 1, 5)),
+  Owner(id: 6, name: 'Ahmet Yücel', contact: '555-0006', createdAt: DateTime(2023, 1, 6), updatedAt: DateTime(2023, 1, 6)),
+  Owner(id: 7, name: 'Beren Saat', contact: '555-0007', createdAt: DateTime(2023, 1, 7), updatedAt: DateTime(2023, 1, 7)),
+  Owner(id: 8, name: 'Kıvanç Tatlıtuğ', contact: '555-0008', createdAt: DateTime(2023, 1, 8), updatedAt: DateTime(2023, 1, 8)),
+  Owner(id: 9, name: 'Tuba Büyüküstün', contact: '555-0009', createdAt: DateTime(2023, 1, 9), updatedAt: DateTime(2023, 1, 9)),
+  Owner(id: 10, name: 'Kenan İmirzalıoğlu', contact: '555-0010', createdAt: DateTime(2023, 1, 10), updatedAt: DateTime(2023, 1, 10)),
+  Owner(id: 11, name: 'Hande Erçel', contact: '555-0011', createdAt: DateTime(2023, 1, 11), updatedAt: DateTime(2023, 1, 11)),
+  Owner(id: 12, name: 'Çağatay Ulusoy', contact: '555-0012', createdAt: DateTime(2023, 1, 12), updatedAt: DateTime(2023, 1, 12)),
+  Owner(id: 13, name: 'Demet Özdemir', contact: '555-0013', createdAt: DateTime(2023, 1, 13), updatedAt: DateTime(2023, 1, 13)),
+  Owner(id: 14, name: 'Aras Bulut İynemli', contact: '555-0014', createdAt: DateTime(2023, 1, 14), updatedAt: DateTime(2023, 1, 14)),
+  Owner(id: 15, name: 'Elçin Sangu', contact: '555-0015', createdAt: DateTime(2023, 1, 15), updatedAt: DateTime(2023, 1, 15)),
+  Owner(id: 16, name: 'Barış Arduç', contact: '555-0016', createdAt: DateTime(2023, 1, 16), updatedAt: DateTime(2023, 1, 16)),
+  Owner(id: 17, name: 'Serenay Sarıkaya', contact: '555-0017', createdAt: DateTime(2023, 1, 17), updatedAt: DateTime(2023, 1, 17)),
+  Owner(id: 18, name: 'Burak Özçivit', contact: '555-0018', createdAt: DateTime(2023, 1, 18), updatedAt: DateTime(2023, 1, 18)),
+  Owner(id: 19, name: 'Fahriye Evcen', contact: '555-0019', createdAt: DateTime(2023, 1, 19), updatedAt: DateTime(2023, 1, 19)),
+  Owner(id: 20, name: 'Engin Akyürek', contact: '555-0020', createdAt: DateTime(2023, 1, 20), updatedAt: DateTime(2023, 1, 20)),
 ];
 
-// --- FORM ENTRIES ---
+
+// --- FORM ENTRIES (60 total) ---
 final List<FormEntry> mockFormEntries = [
-  // Animal 1
-  FormEntry(id: '1', animalId: 1, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Friendly', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 5, 1), sentAt: DateTime(2024, 5, 2), checkedAt: DateTime(2024, 5, 3), updatedAt: DateTime(2024, 5, 3)),
-  FormEntry(id: '2', animalId: 1, title: '', formData: {'General Appearance': 'A bit tired', 'Behavior': 'Calm', 'Eating Habits': 'Slightly reduced'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 6, 1), sentAt: DateTime(2024, 6, 2), checkedAt: DateTime(2024, 6, 3), updatedAt: DateTime(2024, 6, 2)),
-  FormEntry(id: '3', animalId: 1, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Normal', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, createdAt: DateTime(2024, 7, 1), sentAt: DateTime(2024, 7, 1), checkedAt: DateTime(2024, 7, 2), updatedAt: DateTime(2024, 7, 2)),
+  // Animal 1 (3 Forms) - Updated with realistic data
+  FormEntry(
+    id: '1',
+    animalId: 1,
+    type: FormType.RoutineCheck,
+    formData: {
+      'Genel Görünüm': 'Canlı ve parlak tüylü.',
+      'Davranış': 'Oyuncu ve sosyal.',
+      'Yeme/İçme Alışkanlıkları': 'Normal, iştahı yerinde.',
+      'Ek Notlar': 'Herhangi bir sorun gözlemlenmedi.'
+    },
+    isChecked: true,
+    createdAt: DateTime(2024, 1, 15),
+    sentAt: DateTime(2024, 1, 15),
+    checkedAt: DateTime(2024, 1, 16),
+    updatedAt: DateTime(2024, 1, 16)
+  ),
+  FormEntry(
+    id: '2',
+    animalId: 1,
+    type: FormType.Vaccination,
+    formData: {
+      'Uygulanan Aşı': 'Kuduz (Rabies) - Yıllık Tekrar',
+      'Lot Numarası': 'RAB2024-11B',
+      'Reaksiyon Gözlemlendi mi?': 'Hayır, herhangi bir yan etki görülmedi.',
+      'Sonraki Aşı Tarihi': '20 Mart 2025'
+    },
+    isChecked: true,
+    createdAt: DateTime(2024, 3, 20),
+    sentAt: DateTime(2024, 3, 20),
+    checkedAt: DateTime(2024, 3, 21),
+    updatedAt: DateTime(2024, 3, 21)
+  ),
+  FormEntry(
+    id: '3',
+    animalId: 1,
+    type: FormType.Emergency,
+    formData: {
+        'Acil Durum Sebebi': 'Aşırı ve sürekli kaşınma, kulaklarını sallama.',
+        'İlk Değerlendirme': 'Sol kulakta kızarıklık ve akıntı tespit edildi.',
+        'Uygulanan Tedavi': 'Kulak temizliği yapıldı ve antibiyotikli damla reçete edildi.',
+        'Evde Bakım Talimatları': 'Damlanın 7 gün boyunca günde 2 kez kullanılması gerekiyor.'
+    },
+    isChecked: false,
+    createdAt: DateTime(2024, 5, 10),
+    sentAt: DateTime(2024, 5, 10),
+    updatedAt: DateTime(2024, 5, 10)
+  ),
 
-  // Animal 2
-  FormEntry(id: '4', animalId: 2, title: '', formData: {'General Appearance': 'Excellent', 'Behavior': 'Playful', 'Eating Habits': 'Hearty'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 6, 5), sentAt: DateTime(2024, 6, 6), checkedAt: DateTime(2024, 6, 7), updatedAt: DateTime(2024, 6, 7)),
-  FormEntry(id: '5', animalId: 2, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 20), updatedAt: DateTime(2024, 6, 20)),
+  // Animal 2 (3 Forms)
+  FormEntry(id: '4', animalId: 2, type: FormType.RoutineCheck, formData: {'Notes': 'Healthy weight and appetite.'}, isChecked: true, createdAt: DateTime(2024, 2, 1), sentAt: DateTime(2024, 2, 1), checkedAt: DateTime(2024, 2, 2), updatedAt: DateTime(2024, 2, 2)),
+  FormEntry(id: '5', animalId: 2, type: FormType.RoutineCheck, formData: {'Notes': 'Minor ear infection found.'}, isChecked: false, createdAt: DateTime(2024, 4, 5), sentAt: DateTime(2024, 4, 5), updatedAt: DateTime(2024, 4, 5)),
+  FormEntry(id: '6', animalId: 2, type: FormType.Surgery, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 12), updatedAt: DateTime(2024, 6, 12)),
 
-  // Animal 3
-  FormEntry(id: '6', animalId: 3, title: '', formData: {'General Appearance': 'Bright feathers', 'Behavior': 'Active and vocal', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 5, 10), sentAt: DateTime(2024, 5, 11), checkedAt: DateTime(2024, 5, 12), updatedAt: DateTime(2024, 5, 11)),
+  // Animal 3 (3 Forms)
+  FormEntry(id: '7', animalId: 3, type: FormType.Vaccination, formData: {'Notes': 'Booster shots administered.'}, isChecked: true, createdAt: DateTime(2024, 1, 22), sentAt: DateTime(2024, 1, 22), checkedAt: DateTime(2024, 1, 23), updatedAt: DateTime(2024, 1, 23)),
+  FormEntry(id: '8', animalId: 3, type: FormType.RoutineCheck, formData: {'Notes': 'Grooming recommendations provided.'}, isChecked: true, createdAt: DateTime(2024, 3, 1), sentAt: DateTime(2024, 3, 1), checkedAt: DateTime(2024, 3, 2), updatedAt: DateTime(2024, 3, 2)),
+  FormEntry(id: '9', animalId: 3, type: FormType.RoutineCheck, formData: {'Notes': 'Owner reports excessive scratching.'}, isChecked: false, createdAt: DateTime(2024, 5, 18), sentAt: DateTime(2024, 5, 18), updatedAt: DateTime(2024, 5, 18)),
 
-  // Animal 4
-  FormEntry(id: '7', animalId: 4, title: '', formData: {'General Appearance': 'Healthy coat', 'Behavior': 'Energetic', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 4, 15), sentAt: DateTime(2024, 4, 15), checkedAt: DateTime(2024, 4, 16), updatedAt: DateTime(2024, 4, 16)),
-  FormEntry(id: '8', animalId: 4, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Obedient', 'Eating Habits': 'Finishing all meals'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 5, 15), sentAt: DateTime(2024, 5, 15), checkedAt: DateTime(2024, 5, 16), updatedAt: DateTime(2024, 5, 16)),
+  // Animal 4 (3 Forms)
+  FormEntry(id: '10', animalId: 4, type: FormType.RoutineCheck, formData: {'Notes': 'All clear.'}, isChecked: true, createdAt: DateTime(2024, 4, 30), sentAt: DateTime(2024, 4, 30), checkedAt: DateTime(2024, 5, 1), updatedAt: DateTime(2024, 5, 1)),
+  FormEntry(id: '11', animalId: 4, type: FormType.Emergency, formData: {'Notes': 'Swallowed a foreign object.'}, isChecked: true, createdAt: DateTime(2024, 5, 20), sentAt: DateTime(2024, 5, 20), checkedAt: DateTime(2024, 5, 21), updatedAt: DateTime(2024, 5, 21)),
+  FormEntry(id: '12', animalId: 4, type: FormType.Surgery, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 25), updatedAt: DateTime(2024, 6, 25)),
 
-  // Animal 5
-  FormEntry(id: '9', animalId: 5, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Active', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 6, 12), sentAt: DateTime(2024, 6, 13), checkedAt: DateTime(2024, 6, 14), updatedAt: DateTime(2024, 6, 14)),
-  FormEntry(id: '10', animalId: 5, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 7, 5), updatedAt: DateTime(2024, 7, 5)),
+  // Animal 5 (3 Forms)
+  FormEntry(id: '13', animalId: 5, type: FormType.RoutineCheck, formData: {'Notes': 'Routine check, all good.'}, isChecked: true, createdAt: DateTime(2024, 5, 1), sentAt: DateTime(2024, 5, 1), checkedAt: DateTime(2024, 5, 2), updatedAt: DateTime(2024, 5, 2)),
+  FormEntry(id: '14', animalId: 5, type: FormType.Vaccination, formData: {'Notes': 'Annual vaccine shots given.'}, isChecked: false, createdAt: DateTime(2024, 5, 2), sentAt: DateTime(2024, 5, 2), updatedAt: DateTime(2024, 5, 2)),
+  FormEntry(id: '15', animalId: 5, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 7, 3), updatedAt: DateTime(2024, 7, 3)),
 
-  // Animal 6
-  FormEntry(id: '11', animalId: 6, title: '', formData: {'General Appearance': 'Clean water', 'Behavior': 'Swimming actively', 'Eating Habits': 'Eating flakes'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 3, 20), sentAt: DateTime(2024, 3, 21), checkedAt: DateTime(2024, 3, 22), updatedAt: DateTime(2024, 3, 21)),
+  // Animal 6 (3 Forms)
+  FormEntry(id: '16', animalId: 6, type: FormType.Surgery, formData: {'Notes': 'Scheduled for neutering.'}, isChecked: true, createdAt: DateTime(2024, 6, 10), sentAt: DateTime(2024, 6, 10), checkedAt: DateTime(2024, 6, 11), updatedAt: DateTime(2024, 6, 11)),
+  FormEntry(id: '17', animalId: 6, type: FormType.RoutineCheck, formData: {'Notes': 'Post-surgery checkup.'}, isChecked: false, createdAt: DateTime(2024, 6, 24), sentAt: DateTime(2024, 6, 24), updatedAt: DateTime(2024, 6, 24)),
+  FormEntry(id: '18', animalId: 6, type: FormType.Emergency, formData: {}, isChecked: false, createdAt: DateTime(2024, 8, 1), updatedAt: DateTime(2024, 8, 1)),
 
-  // Animal 7
-  FormEntry(id: '12', animalId: 7, title: '', formData: {'General Appearance': 'Healthy', 'Behavior': 'Playful', 'Eating Habits': 'Good appetite'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 2, 22), sentAt: DateTime(2024, 2, 23), checkedAt: DateTime(2024, 2, 24), updatedAt: DateTime(2024, 2, 24)),
-  FormEntry(id: '13', animalId: 7, title: '', formData: {'General Appearance': 'Limping slightly', 'Behavior': 'Lethargic', 'Eating Habits': 'Reduced'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 3, 22), sentAt: DateTime(2024, 3, 23), checkedAt: DateTime(2024, 3, 24), updatedAt: DateTime(2024, 3, 23)),
+  // Animal 7 (3 Forms)
+  FormEntry(id: '19', animalId: 7, type: FormType.RoutineCheck, formData: {'Notes': 'All looks normal.'}, isChecked: true, createdAt: DateTime(2024, 3, 12), sentAt: DateTime(2024, 3, 12), checkedAt: DateTime(2024, 3, 13), updatedAt: DateTime(2024, 3, 13)),
+  FormEntry(id: '20', animalId: 7, type: FormType.RoutineCheck, formData: {'Notes': 'Discussed diet options.'}, isChecked: true, createdAt: DateTime(2024, 4, 15), sentAt: DateTime(2024, 4, 15), checkedAt: DateTime(2024, 4, 16), updatedAt: DateTime(2024, 4, 16)),
+  FormEntry(id: '21', animalId: 7, type: FormType.Vaccination, formData: {}, isChecked: false, createdAt: DateTime(2024, 5, 22), updatedAt: DateTime(2024, 5, 22)),
 
-  // Animal 9
-  FormEntry(id: '14', animalId: 9, title: '', formData: {'General Appearance': 'Plumage looks good', 'Behavior': 'Mimicking sounds', 'Eating Habits': 'Eating seeds'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 1, 30), sentAt: DateTime(2024, 1, 31), checkedAt: DateTime(2024, 2, 1), updatedAt: DateTime(2024, 2, 1)),
+  // Animal 8 (3 Forms)
+  FormEntry(id: '22', animalId: 8, type: FormType.Emergency, formData: {'Notes': 'Presented with a limp.'}, isChecked: false, createdAt: DateTime(2024, 5, 30), sentAt: DateTime(2024, 5, 30), updatedAt: DateTime(2024, 5, 30)),
+  FormEntry(id: '23', animalId: 8, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 15), updatedAt: DateTime(2024, 6, 15)),
+  FormEntry(id: '24', animalId: 8, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 7, 1), updatedAt: DateTime(2024, 7, 1)),
 
-  // Animal 10
-  FormEntry(id: '15', animalId: 10, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 18), updatedAt: DateTime(2024, 6, 18)),
+  // Animal 9 (3 Forms)
+  FormEntry(id: '25', animalId: 9, type: FormType.RoutineCheck, formData: {'Notes': 'Normal checkup.'}, isChecked: true, createdAt: DateTime(2024, 5, 9), sentAt: DateTime(2024, 5, 9), checkedAt: DateTime(2024, 5, 10), updatedAt: DateTime(2024, 5, 10)),
+  FormEntry(id: '26', animalId: 9, type: FormType.Vaccination, formData: {'Notes': 'Flea and tick prevention applied.'}, isChecked: true, createdAt: DateTime(2024, 5, 23), sentAt: DateTime(2024, 5, 23), checkedAt: DateTime(2024, 5, 24), updatedAt: DateTime(2024, 5, 24)),
+  FormEntry(id: '27', animalId: 9, type: FormType.Surgery, formData: {'Notes': 'Dental cleaning performed.'}, isChecked: false, createdAt: DateTime(2024, 6, 14), sentAt: DateTime(2024, 6, 14), updatedAt: DateTime(2024, 6, 14)),
 
-  // More entries to reach 60
-  FormEntry(id: '16', animalId: 1, title: '', formData: {'General Appearance': 'Energetic', 'Behavior': 'Good', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 3, 1), sentAt: DateTime(2024, 3, 2), checkedAt: DateTime(2024, 3, 3), updatedAt: DateTime(2024, 3, 3)),
-  FormEntry(id: '17', animalId: 2, title: '', formData: {'General Appearance': 'Fluffy coat', 'Behavior': 'Affectionate', 'Eating Habits': 'Eats well'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 1, 20), sentAt: DateTime(2024, 1, 21), checkedAt: DateTime(2024, 1, 22), updatedAt: DateTime(2024, 1, 22)),
-  FormEntry(id: '18', animalId: 3, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 25), updatedAt: DateTime(2024, 6, 25)),
-  FormEntry(id: '19', animalId: 4, title: '', formData: {'General Appearance': 'Very active', 'Behavior': 'Wags tail a lot', 'Eating Habits': 'Loves treats'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 6, 1), sentAt: DateTime(2024, 6, 2), checkedAt: DateTime(2024, 6, 3), updatedAt: DateTime(2024, 6, 3)),
-  FormEntry(id: '20', animalId: 5, title: '', formData: {'General Appearance': 'Running on wheel', 'Behavior': 'Nocturnal', 'Eating Habits': 'Storing food'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 2, 14), sentAt: DateTime(2024, 2, 14), checkedAt: DateTime(2024, 2, 15), updatedAt: DateTime(2024, 2, 15)),
-  FormEntry(id: '21', animalId: 6, title: '', formData: {'General Appearance': 'Clear water', 'Behavior': 'Normal', 'Eating Habits': 'Regular'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 5, 29), sentAt: DateTime(2024, 5, 30), checkedAt: DateTime(2024, 5, 31), updatedAt: DateTime(2024, 5, 30)),
-  FormEntry(id: '22', animalId: 7, title: '', formData: {'General Appearance': 'Recovering well', 'Behavior': 'Resting', 'Eating Habits': 'Improving'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 4, 15), sentAt: DateTime(2024, 4, 16), checkedAt: DateTime(2024, 4, 17), updatedAt: DateTime(2024, 4, 16)),
-  FormEntry(id: '23', animalId: 9, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 3, 5), updatedAt: DateTime(2024, 3, 5)),
-  FormEntry(id: '24', animalId: 10, title: '', formData: {'General Appearance': 'Shell is hard', 'Behavior': 'Slow', 'Eating Habits': 'Eats lettuce'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2023, 11, 15), sentAt: DateTime(2023, 11, 16), checkedAt: DateTime(2023, 11, 17), updatedAt: DateTime(2023, 11, 16)),
-  FormEntry(id: '25', animalId: 1, title: '', formData: {'General Appearance': 'Shiny coat', 'Behavior': 'Likes to play fetch', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2023, 12, 10), sentAt: DateTime(2023, 12, 11), checkedAt: DateTime(2023, 12, 12), updatedAt: DateTime(2023, 12, 12)),
-  FormEntry(id: '26', animalId: 2, title: '', formData: {'General Appearance': 'Normal', 'Behavior': 'Good', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 5, 20), sentAt: DateTime(2024, 5, 21), checkedAt: DateTime(2024, 5, 22), updatedAt: DateTime(2024, 5, 21)),
-  FormEntry(id: '27', animalId: 4, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Well-behaved', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 3, 18), sentAt: DateTime(2024, 3, 18), checkedAt: DateTime(2024, 3, 19), updatedAt: DateTime(2024, 3, 19)),
-  FormEntry(id: '28', animalId: 5, title: '', formData: {'General Appearance': 'Healthy', 'Behavior': 'Curious', 'Eating Habits': 'Loves seeds'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 4, 22), sentAt: DateTime(2024, 4, 23), checkedAt: DateTime(2024, 4, 24), updatedAt: DateTime(2024, 4, 24)),
-  FormEntry(id: '29', animalId: 7, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 30), updatedAt: DateTime(2024, 6, 30)),
-  FormEntry(id: '30', animalId: 9, title: '', formData: {'General Appearance': 'Colorful feathers', 'Behavior': 'Talkative', 'Eating Habits': 'Likes fruit'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 4, 1), sentAt: DateTime(2024, 4, 2), checkedAt: DateTime(2024, 4, 3), updatedAt: DateTime(2024, 4, 3)),
-  FormEntry(id: '31', animalId: 1, title: '', formData: {'General Appearance': 'Clean', 'Behavior': 'Happy', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 4, 5), sentAt: DateTime(2024, 4, 6), checkedAt: DateTime(2024, 4, 7), updatedAt: DateTime(2024, 4, 7)),
-  FormEntry(id: '32', animalId: 2, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 7, 2), updatedAt: DateTime(2024, 7, 2)),
-  FormEntry(id: '33', animalId: 3, title: '', formData: {'General Appearance': 'Excellent', 'Behavior': 'Singing', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 6, 10), sentAt: DateTime(2024, 6, 11), checkedAt: DateTime(2024, 6, 12), updatedAt: DateTime(2024, 6, 12)),
-  FormEntry(id: '34', animalId: 4, title: '', formData: {'General Appearance': 'Tired after play', 'Behavior': 'Good', 'Eating Habits': 'Hungry'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 5, 25), sentAt: DateTime(2024, 5, 26), checkedAt: DateTime(2024, 5, 27), updatedAt: DateTime(2024, 5, 26)),
-  FormEntry(id: '35', animalId: 5, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 15), updatedAt: DateTime(2024, 6, 15)),
-  FormEntry(id: '36', animalId: 6, title: '', formData: {'General Appearance': 'Clean tank', 'Behavior': 'Normal', 'Eating Habits': 'Regular'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 6, 28), sentAt: DateTime(2024, 6, 29), checkedAt: DateTime(2024, 6, 30), updatedAt: DateTime(2024, 6, 30)),
-  FormEntry(id: '37', animalId: 7, title: '', formData: {'General Appearance': 'No limping', 'Behavior': 'More active', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 5, 1), sentAt: DateTime(2024, 5, 2), checkedAt: DateTime(2024, 5, 3), updatedAt: DateTime(2024, 5, 2)),
-  FormEntry(id: '38', animalId: 9, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Learning new words', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 5, 18), sentAt: DateTime(2024, 5, 19), checkedAt: DateTime(2024, 5, 20), updatedAt: DateTime(2024, 5, 19)),
-  FormEntry(id: '39', animalId: 10, title: '', formData: {'General Appearance': 'Healthy shell', 'Behavior': 'Normal', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 4, 20), sentAt: DateTime(2024, 4, 21), checkedAt: DateTime(2024, 4, 22), updatedAt: DateTime(2024, 4, 22)),
-  FormEntry(id: '40', animalId: 1, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Plays well with others', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 2, 15), sentAt: DateTime(2024, 2, 16), checkedAt: DateTime(2024, 2, 17), updatedAt: DateTime(2024, 2, 16)),
-  FormEntry(id: '41', animalId: 2, title: '', formData: {'General Appearance': 'Ready for adoption', 'Behavior': 'Sweet', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 3, 10), sentAt: DateTime(2024, 3, 11), checkedAt: DateTime(2024, 3, 12), updatedAt: DateTime(2024, 3, 12)),
-  FormEntry(id: '42', animalId: 4, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Listens to commands', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 2, 20), sentAt: DateTime(2024, 2, 21), checkedAt: DateTime(2024, 2, 22), updatedAt: DateTime(2024, 2, 21)),
-  FormEntry(id: '43', animalId: 5, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 5, 30), updatedAt: DateTime(2024, 5, 30)),
-  FormEntry(id: '44', animalId: 7, title: '', formData: {'General Appearance': 'Stable', 'Behavior': 'Calm', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 6, 22), sentAt: DateTime(2024, 6, 23), checkedAt: DateTime(2024, 6, 24), updatedAt: DateTime(2024, 6, 24)),
-  FormEntry(id: '45', animalId: 9, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 5), updatedAt: DateTime(2024, 6, 5)),
-  FormEntry(id: '46', animalId: 10, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Normal', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 7, 1), sentAt: DateTime(2024, 7, 1), checkedAt: DateTime(2024, 7, 2), updatedAt: DateTime(2024, 7, 1)),
-  FormEntry(id: '47', animalId: 1, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Normal', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, createdAt: DateTime(2024, 7, 10), sentAt: DateTime(2024, 7, 10), checkedAt: DateTime(2024, 7, 11), updatedAt: DateTime(2024, 7, 11)),
-  FormEntry(id: '48', animalId: 2, title: '', formData: {'General Appearance': 'Adapting well', 'Behavior': 'Friendly', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 4, 12), sentAt: DateTime(2024, 4, 13), checkedAt: DateTime(2024, 4, 14), updatedAt: DateTime(2024, 4, 14)),
-  FormEntry(id: '49', animalId: 4, title: '', formData: {'General Appearance': 'Learning fast', 'Behavior': 'Energetic', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 5, 5), sentAt: DateTime(2024, 5, 6), checkedAt: DateTime(2024, 5, 7), updatedAt: DateTime(2024, 5, 6)),
-  FormEntry(id: '50', animalId: 6, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 7, 3), updatedAt: DateTime(2024, 7, 3)),
-  FormEntry(id: '51', animalId: 7, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 28), updatedAt: DateTime(2024, 6, 28)),
-  FormEntry(id: '52', animalId: 9, title: '', formData: {'General Appearance': 'Likes new perch', 'Behavior': 'Happy', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 6, 18), sentAt: DateTime(2024, 6, 18), checkedAt: DateTime(2024, 6, 19), updatedAt: DateTime(2024, 6, 19)),
-  FormEntry(id: '53', animalId: 10, title: '', formData: {'General Appearance': 'Healthy weight', 'Behavior': 'Normal', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 5, 15), sentAt: DateTime(2024, 5, 16), checkedAt: DateTime(2024, 5, 17), updatedAt: DateTime(2024, 5, 16)),
-  FormEntry(id: '54', animalId: 1, title: '', formData: {'General Appearance': 'Good', 'Behavior': 'Normal', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 1, 25), sentAt: DateTime(2024, 1, 26), checkedAt: DateTime(2024, 1, 27), updatedAt: DateTime(2024, 1, 26)),
-  FormEntry(id: '55', animalId: 2, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 7, 5), updatedAt: DateTime(2024, 7, 5)),
-  FormEntry(id: '56', animalId: 3, title: '', formData: {'General Appearance': 'Ready to travel', 'Behavior': 'Calm', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 5, 22), sentAt: DateTime(2024, 5, 23), checkedAt: DateTime(2024, 5, 24), updatedAt: DateTime(2024, 5, 24)),
-  FormEntry(id: '57', animalId: 4, title: '', formData: {'General Appearance': 'Likes new food', 'Behavior': 'Good', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 2, createdAt: DateTime(2024, 4, 10), sentAt: DateTime(2024, 4, 11), checkedAt: DateTime(2024, 4, 12), updatedAt: DateTime(2024, 4, 11)),
-  FormEntry(id: '58', animalId: 5, title: '', formData: {}, isSent: false, isChecked: false, createdAt: DateTime(2024, 6, 22), updatedAt: DateTime(2024, 6, 22)),
-  FormEntry(id: '59', animalId: 7, title: '', formData: {'General Appearance': 'Healed well', 'Behavior': 'Happy', 'Eating Habits': 'Normal'}, isSent: true, isChecked: true, checkedByUserId: 1, createdAt: DateTime(2024, 6, 9), sentAt: DateTime(2024, 6, 10), checkedAt: DateTime(2024, 6, 11), updatedAt: DateTime(2024, 6, 11)),
-  FormEntry(id: '60', animalId: 9, title: '', formData: {'General Appearance': 'Curious', 'Behavior': 'Normal', 'Eating Habits': 'Good'}, isSent: true, isChecked: true, checkedByUserId: 3, createdAt: DateTime(2024, 3, 28), sentAt: DateTime(2024, 3, 29), checkedAt: DateTime(2024, 3, 30), updatedAt: DateTime(2024, 3, 29)),
+  // Animal 10 (3 Forms)
+  FormEntry(id: '28', animalId: 10, type: FormType.RoutineCheck, formData: {'Notes': 'Healthy and active.'}, isChecked: true, createdAt: DateTime(2024, 2, 28), sentAt: DateTime(2024, 2, 28), checkedAt: DateTime(2024, 2, 29), updatedAt: DateTime(2024, 2, 29)),
+  FormEntry(id: '29', animalId: 10, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 4, 10), updatedAt: DateTime(2024, 4, 10)),
+  FormEntry(id: '30', animalId: 10, type: FormType.Emergency, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 5), updatedAt: DateTime(2024, 6, 5)),
+
+  // Animal 11 (3 Forms)
+  FormEntry(id: '31', animalId: 11, type: FormType.Vaccination, formData: {'Notes': 'Annual shots up to date.'}, isChecked: true, createdAt: DateTime(2024, 5, 16), sentAt: DateTime(2024, 5, 16), checkedAt: DateTime(2024, 5, 17), updatedAt: DateTime(2024, 5, 17)),
+  FormEntry(id: '32', animalId: 11, type: FormType.RoutineCheck, formData: {'Notes': 'Slightly underweight.'}, isChecked: false, createdAt: DateTime(2024, 6, 20), sentAt: DateTime(2024, 6, 20), updatedAt: DateTime(2024, 6, 20)),
+  FormEntry(id: '33', animalId: 11, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 7, 18), updatedAt: DateTime(2024, 7, 18)),
+
+  // Animal 12 (3 Forms)
+  FormEntry(id: '34', animalId: 12, type: FormType.RoutineCheck, formData: {'Notes': 'Pre-adoption screening passed.'}, isChecked: true, createdAt: DateTime(2024, 6, 22), sentAt: DateTime(2024, 6, 22), checkedAt: DateTime(2024, 6, 23), updatedAt: DateTime(2024, 6, 23)),
+  FormEntry(id: '35', animalId: 12, type: FormType.RoutineCheck, formData: {'Notes': 'Ready for new home.'}, isChecked: true, createdAt: DateTime(2024, 6, 29), sentAt: DateTime(2024, 6, 29), checkedAt: DateTime(2024, 6, 30), updatedAt: DateTime(2024, 6, 30)),
+  FormEntry(id: '36', animalId: 12, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 7, 5), updatedAt: DateTime(2024, 7, 5)),
+
+  // Animal 13 (4 Forms)
+  FormEntry(id: '37', animalId: 13, type: FormType.RoutineCheck, formData: {'Notes': 'First checkup.'}, isChecked: true, createdAt: DateTime(2024, 1, 5), sentAt: DateTime(2024, 1, 5), checkedAt: DateTime(2024, 1, 6), updatedAt: DateTime(2024, 1, 6)),
+  FormEntry(id: '38', animalId: 13, type: FormType.Vaccination, formData: {'Notes': 'First round of puppy shots.'}, isChecked: true, createdAt: DateTime(2024, 2, 5), sentAt: DateTime(2024, 2, 5), checkedAt: DateTime(2024, 2, 6), updatedAt: DateTime(2024, 2, 6)),
+  FormEntry(id: '39', animalId: 13, type: FormType.Vaccination, formData: {'Notes': 'Second round of puppy shots.'}, isChecked: false, createdAt: DateTime(2024, 3, 5), sentAt: DateTime(2024, 3, 5), updatedAt: DateTime(2024, 3, 5)),
+  FormEntry(id: '40', animalId: 13, type: FormType.Surgery, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 1), updatedAt: DateTime(2024, 6, 1)),
+
+  // Animal 14 (4 Forms)
+  FormEntry(id: '41', animalId: 14, type: FormType.Emergency, formData: {'Notes': 'Treated for minor cut on paw.'}, isChecked: true, createdAt: DateTime(2024, 4, 12), sentAt: DateTime(2024, 4, 12), checkedAt: DateTime(2024, 4, 13), updatedAt: DateTime(2024, 4, 13)),
+  FormEntry(id: '42', animalId: 14, type: FormType.RoutineCheck, formData: {'Notes': 'Wound is healing well.'}, isChecked: false, createdAt: DateTime(2024, 4, 26), sentAt: DateTime(2024, 4, 26), updatedAt: DateTime(2024, 4, 26)),
+  FormEntry(id: '43', animalId: 14, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 5, 24), updatedAt: DateTime(2024, 5, 24)),
+  FormEntry(id: '44', animalId: 14, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 21), updatedAt: DateTime(2024, 6, 21)),
+
+  // Animal 15 (4 Forms)
+  FormEntry(id: '45', animalId: 15, type: FormType.RoutineCheck, formData: {'Notes': 'Initial intake screening.'}, isChecked: true, createdAt: DateTime(2024, 6, 1), sentAt: DateTime(2024, 6, 1), checkedAt: DateTime(2024, 6, 2), updatedAt: DateTime(2024, 6, 2)),
+  FormEntry(id: '46', animalId: 15, type: FormType.Vaccination, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 2), updatedAt: DateTime(2024, 6, 2)),
+  FormEntry(id: '47', animalId: 15, type: FormType.Surgery, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 3), updatedAt: DateTime(2024, 6, 3)),
+  FormEntry(id: '48', animalId: 15, type: FormType.Emergency, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 4), updatedAt: DateTime(2024, 6, 4)),
+
+  // Animal 16 (4 Forms)
+  FormEntry(id: '49', animalId: 16, type: FormType.RoutineCheck, formData: {'Notes': 'Good health.'}, isChecked: true, createdAt: DateTime(2024, 1, 10), sentAt: DateTime(2024, 1, 10), checkedAt: DateTime(2024, 1, 11), updatedAt: DateTime(2024, 1, 11)),
+  FormEntry(id: '50', animalId: 16, type: FormType.RoutineCheck, formData: {'Notes': 'Good health.'}, isChecked: true, createdAt: DateTime(2024, 2, 10), sentAt: DateTime(2024, 2, 10), checkedAt: DateTime(2024, 2, 11), updatedAt: DateTime(2024, 2, 11)),
+  FormEntry(id: '51', animalId: 16, type: FormType.RoutineCheck, formData: {'Notes': 'Good health.'}, isChecked: true, createdAt: DateTime(2024, 3, 10), sentAt: DateTime(2024, 3, 10), checkedAt: DateTime(2024, 3, 11), updatedAt: DateTime(2024, 3, 11)),
+  FormEntry(id: '52', animalId: 16, type: FormType.RoutineCheck, formData: {'Notes': 'Needs a dental check.'}, isChecked: false, createdAt: DateTime(2024, 4, 10), sentAt: DateTime(2024, 4, 10), updatedAt: DateTime(2024, 4, 10)),
+  
+  // Animal 17 (4 Forms)
+  FormEntry(id: '53', animalId: 17, type: FormType.Vaccination, formData: {'Notes': 'Rabies shot.'}, isChecked: true, createdAt: DateTime(2024, 5, 5), sentAt: DateTime(2024, 5, 5), checkedAt: DateTime(2024, 5, 6), updatedAt: DateTime(2024, 5, 6)),
+  FormEntry(id: '54', animalId: 17, type: FormType.Surgery, formData: {'Notes': 'Minor procedure on left ear.'}, isChecked: true, createdAt: DateTime(2024, 5, 12), sentAt: DateTime(2024, 5, 12), checkedAt: DateTime(2024, 5, 13), updatedAt: DateTime(2024, 5, 13)),
+  FormEntry(id: '55', animalId: 17, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 5, 26), updatedAt: DateTime(2024, 5, 26)),
+  FormEntry(id: '56', animalId: 17, type: FormType.Emergency, formData: {}, isChecked: false, createdAt: DateTime(2024, 6, 3), updatedAt: DateTime(2024, 6, 3)),
+  
+  // Animal 18 (4 Forms)
+  FormEntry(id: '57', animalId: 18, type: FormType.RoutineCheck, formData: {'Notes': 'Behavioral assessment.'}, isChecked: true, createdAt: DateTime(2024, 6, 18), sentAt: DateTime(2024, 6, 18), checkedAt: DateTime(2024, 6, 19), updatedAt: DateTime(2024, 6, 19)),
+  FormEntry(id: '58', animalId: 18, type: FormType.RoutineCheck, formData: {'Notes': 'Dietary consultation.'}, isChecked: false, createdAt: DateTime(2024, 6, 28), sentAt: DateTime(2024, 6, 28), updatedAt: DateTime(2024, 6, 28)),
+  FormEntry(id: '59', animalId: 18, type: FormType.Vaccination, formData: {}, isChecked: false, createdAt: DateTime(2024, 7, 10), updatedAt: DateTime(2024, 7, 10)),
+  FormEntry(id: '60', animalId: 18, type: FormType.RoutineCheck, formData: {}, isChecked: false, createdAt: DateTime(2024, 8, 1), updatedAt: DateTime(2024, 8, 1)),
 ];
 
-// --- ANIMALS ---
+
+// --- ANIMALS (20 total) ---
 final List<Animal> mockAnimals = [
-  Animal(id: 1, ownerId: 1, name: 'Buddy', species: 'Köpek', age: 3, lastCheckDate: DateTime(2024, 6, 1), createdAt: DateTime(2023, 1, 5), updatedAt: DateTime(2023, 1, 5), owner: mockOwners[0], forms: mockFormEntries.where((f) => f.animalId == 1).toList()),
-  Animal(id: 2, ownerId: 2, name: 'Whiskers', species: 'Kedi', age: 2, lastCheckDate: DateTime(2024, 6, 5), createdAt: DateTime(2023, 1, 6), updatedAt: DateTime(2023, 1, 6), owner: mockOwners[1], forms: mockFormEntries.where((f) => f.animalId == 2).toList()),
-  Animal(id: 3, ownerId: 3, name: 'Polly', species: 'Kuş', age: 1, lastCheckDate: DateTime(2024, 5, 10), createdAt: DateTime(2023, 1, 7), updatedAt: DateTime(2023, 1, 7), owner: mockOwners[2], forms: mockFormEntries.where((f) => f.animalId == 3).toList()),
-  Animal(id: 4, ownerId: 4, name: 'Max', species: 'Köpek', age: 5, lastCheckDate: DateTime(2024, 6, 1), createdAt: DateTime(2022, 8, 15), updatedAt: DateTime(2022, 8, 15), owner: mockOwners[3], forms: mockFormEntries.where((f) => f.animalId == 4).toList()),
-  Animal(id: 5, ownerId: 5, name: 'Squeaky', species: 'Hamster', age: 1, lastCheckDate: DateTime(2024, 6, 12), createdAt: DateTime(2023, 9, 1), updatedAt: DateTime(2023, 9, 1), owner: mockOwners[4], forms: mockFormEntries.where((f) => f.animalId == 5).toList()),
-  Animal(id: 6, ownerId: 6, name: 'Goldie', species: 'Balık', age: 1, lastCheckDate: DateTime(2024, 5, 29), createdAt: DateTime(2023, 10, 20), updatedAt: DateTime(2023, 10, 20), owner: mockOwners[5], forms: mockFormEntries.where((f) => f.animalId == 6).toList()),
-  Animal(id: 7, ownerId: 7, name: 'Rocky', species: 'Köpek', age: 7, createdAt: DateTime(2020, 4, 10), updatedAt: DateTime(2020, 4, 10), owner: mockOwners[6], forms: mockFormEntries.where((f) => f.animalId == 7).toList()),
-  Animal(id: 8, ownerId: 8, name: 'Misty', species: 'Kedi', age: 4, createdAt: DateTime(2021, 11, 11), updatedAt: DateTime(2021, 11, 11), owner: mockOwners[7], forms: []), // No forms
-  Animal(id: 9, ownerId: 9, name: 'Captain', species: 'Papağan', age: 2, createdAt: DateTime(2022, 5, 3), updatedAt: DateTime(2022, 5, 3), owner: mockOwners[8], forms: mockFormEntries.where((f) => f.animalId == 9).toList()),
-  Animal(id: 10, ownerId: 10, name: 'Sheldon', species: 'Kaplumbağa', age: 10, createdAt: DateTime(2014, 8, 22), updatedAt: DateTime(2014, 8, 22), owner: mockOwners[9], forms: mockFormEntries.where((f) => f.animalId == 10).toList()),
+  Animal(id: 1, ownerId: 1, name: 'Karabaş', species: 'Köpek', age: 5, lastCheckDate: DateTime.now().subtract(const Duration(days: 10)), createdAt: DateTime(2023, 3, 1), updatedAt: DateTime(2023, 11, 1), owner: mockOwners[0], forms: mockFormEntries.where((form) => form.animalId == 1).toList()),
+  Animal(id: 2, ownerId: 2, name: 'Pamuk', species: 'Kedi', age: 3, lastCheckDate: DateTime.now().subtract(const Duration(days: 20)), createdAt: DateTime(2023, 3, 2), updatedAt: DateTime(2023, 11, 2), owner: mockOwners[1], forms: mockFormEntries.where((form) => form.animalId == 2).toList()),
+  Animal(id: 3, ownerId: 3, name: 'Maviş', species: 'Kuş', age: 2, lastCheckDate: DateTime.now().subtract(const Duration(days: 30)), createdAt: DateTime(2023, 3, 3), updatedAt: DateTime(2023, 11, 3), owner: mockOwners[2], forms: mockFormEntries.where((form) => form.animalId == 3).toList()),
+  Animal(id: 4, ownerId: 4, name: 'Dost', species: 'Köpek', age: 7, lastCheckDate: DateTime.now().subtract(const Duration(days: 40)), createdAt: DateTime(2023, 3, 4), updatedAt: DateTime(2023, 11, 4), owner: mockOwners[3], forms: mockFormEntries.where((form) => form.animalId == 4).toList()),
+  Animal(id: 5, ownerId: 5, name: 'Boncuk', species: 'Kedi', age: 1, lastCheckDate: DateTime.now().subtract(const Duration(days: 50)), createdAt: DateTime(2023, 3, 5), updatedAt: DateTime(2023, 11, 5), owner: mockOwners[4], forms: mockFormEntries.where((form) => form.animalId == 5).toList()),
+  Animal(id: 6, ownerId: 6, name: 'Paşa', species: 'Köpek', age: 4, lastCheckDate: DateTime.now().subtract(const Duration(days: 60)), createdAt: DateTime(2023, 3, 6), updatedAt: DateTime(2023, 11, 6), owner: mockOwners[5], forms: mockFormEntries.where((form) => form.animalId == 6).toList()),
+  Animal(id: 7, ownerId: 7, name: 'Limon', species: 'Kuş', age: 3, lastCheckDate: DateTime.now().subtract(const Duration(days: 70)), createdAt: DateTime(2023, 3, 7), updatedAt: DateTime(2023, 11, 7), owner: mockOwners[6], forms: mockFormEntries.where((form) => form.animalId == 7).toList()),
+  Animal(id: 8, ownerId: 8, name: 'Zeytin', species: 'Kedi', age: 6, lastCheckDate: DateTime.now().subtract(const Duration(days: 80)), createdAt: DateTime(2023, 3, 8), updatedAt: DateTime(2023, 11, 8), owner: mockOwners[7], forms: mockFormEntries.where((form) => form.animalId == 8).toList()),
+  Animal(id: 9, ownerId: 9, name: 'Fındık', species: 'Köpek', age: 2, lastCheckDate: DateTime.now().subtract(const Duration(days: 90)), createdAt: DateTime(2023, 3, 9), updatedAt: DateTime(2023, 11, 9), owner: mockOwners[8], forms: mockFormEntries.where((form) => form.animalId == 9).toList()),
+  Animal(id: 10, ownerId: 10, name: 'Bulut', species: 'Kedi', age: 8, lastCheckDate: DateTime.now().subtract(const Duration(days: 100)), createdAt: DateTime(2023, 3, 10), updatedAt: DateTime(2023, 11, 10), owner: mockOwners[9], forms: mockFormEntries.where((form) => form.animalId == 10).toList()),
+  Animal(id: 11, ownerId: 11, name: 'Şeker', species: 'Kuş', age: 1, lastCheckDate: DateTime.now().subtract(const Duration(days: 110)), createdAt: DateTime(2023, 3, 11), updatedAt: DateTime(2023, 11, 11), owner: mockOwners[10], forms: mockFormEntries.where((form) => form.animalId == 11).toList()),
+  Animal(id: 12, ownerId: 12, name: 'Kont', species: 'Köpek', age: 9, lastCheckDate: DateTime.now().subtract(const Duration(days: 120)), createdAt: DateTime(2023, 3, 12), updatedAt: DateTime(2023, 11, 12), owner: mockOwners[11], forms: mockFormEntries.where((form) => form.animalId == 12).toList()),
+  Animal(id: 13, ownerId: 13, name: 'Garfield', species: 'Kedi', age: 4, lastCheckDate: DateTime.now().subtract(const Duration(days: 130)), createdAt: DateTime(2023, 3, 13), updatedAt: DateTime(2023, 11, 13), owner: mockOwners[12], forms: mockFormEntries.where((form) => form.animalId == 13).toList()),
+  Animal(id: 14, ownerId: 14, name: 'Çakıl', species: 'Köpek', age: 6, lastCheckDate: DateTime.now().subtract(const Duration(days: 140)), createdAt: DateTime(2023, 3, 14), updatedAt: DateTime(2023, 11, 14), owner: mockOwners[13], forms: mockFormEntries.where((form) => form.animalId == 14).toList()),
+  Animal(id: 15, ownerId: 15, name: 'Duman', species: 'Kedi', age: 5, lastCheckDate: DateTime.now().subtract(const Duration(days: 150)), createdAt: DateTime(2023, 3, 15), updatedAt: DateTime(2023, 11, 15), owner: mockOwners[14], forms: mockFormEntries.where((form) => form.animalId == 15).toList()),
+  Animal(id: 16, ownerId: 16, name: 'Hera', species: 'Köpek', age: 3, lastCheckDate: DateTime.now().subtract(const Duration(days: 160)), createdAt: DateTime(2023, 3, 16), updatedAt: DateTime(2023, 11, 16), owner: mockOwners[15], forms: mockFormEntries.where((form) => form.animalId == 16).toList()),
+  Animal(id: 17, ownerId: 17, name: 'Simba', species: 'Kedi', age: 2, lastCheckDate: DateTime.now().subtract(const Duration(days: 170)), createdAt: DateTime(2023, 3, 17), updatedAt: DateTime(2023, 11, 17), owner: mockOwners[16], forms: mockFormEntries.where((form) => form.animalId == 17).toList()),
+  Animal(id: 18, ownerId: 18, name: 'Tarçın', species: 'Köpek', age: 7, lastCheckDate: DateTime.now().subtract(const Duration(days: 180)), createdAt: DateTime(2023, 3, 18), updatedAt: DateTime(2023, 11, 18), owner: mockOwners[17], forms: mockFormEntries.where((form) => form.animalId == 18).toList()),
+  Animal(id: 19, ownerId: 19, name: 'Yoda', species: 'Tavşan', age: 1, lastCheckDate: null, createdAt: DateTime(2023, 4, 19), updatedAt: DateTime(2023, 4, 19), owner: mockOwners[18], forms: []),
+  Animal(id: 20, ownerId: 20, name: 'Spike', species: 'İguana', age: 4, lastCheckDate: null, createdAt: DateTime(2023, 4, 20), updatedAt: DateTime(2023, 4, 20), owner: mockOwners[19], forms: []),
 ];
