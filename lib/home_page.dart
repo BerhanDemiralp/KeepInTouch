@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                                 Theme.of(context).colorScheme.secondary,
                             child: const Icon(Icons.pets, color: Colors.white, size: 30),
                           ),
-                          const SizedBox(width: 16),
+                          const SizedBox(width: 16), // space
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

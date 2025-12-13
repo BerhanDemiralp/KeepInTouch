@@ -78,7 +78,10 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Text(titles[_selectedIndex]),
       ),
-      body: _pages.elementAt(_selectedIndex),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pages,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
